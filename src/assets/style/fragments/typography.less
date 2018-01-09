@@ -1,0 +1,56 @@
+@import (reference) '~@/assets/style/variables/typography';
+
+html {
+    // 62.5% of 16px = 10px base font-size
+    // Convenient for declaring sizes in rems
+    font-size: percentage(10 / 16);
+
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: @normal-text;
+    word-spacing: 0.1rem; // = 1px
+    hanging-punctuation: first allow-end last;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+h1 {
+    font-size: @h1;
+}
+
+h2 {
+    font-size: @h2;
+}
+
+h3 {
+    font-size: @h3;
+}
+
+h4 {
+    font-size: @h4;
+}
+
+h5 {
+    font-size: @h5;
+}
+
+a {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
