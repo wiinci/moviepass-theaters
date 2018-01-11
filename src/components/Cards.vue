@@ -10,26 +10,26 @@
 </template>
 
 <script>
-import Card from '@/components/Card';
+import Card from "@/components/Card";
 
 export default {
-    name: 'Cards',
+    name: "Cards",
+
+    components: {
+        Card
+    },
 
     props: {
         theaters: {
             type: Array,
             required: true
         }
-    },
-
-    components: {
-        Card
     }
 };
 </script>
 
-<<style lang="less" scoped>
-@import (reference) '~@/assets/style/variables/global';
+<style lang="less" scoped>
+@import (reference) "~@/assets/style/variables/global";
 
 .c-cards {
     display: grid;
@@ -42,5 +42,3 @@ export default {
     list-style: none outside;
 }
 </style>
-
-

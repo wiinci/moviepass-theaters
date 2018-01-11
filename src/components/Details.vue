@@ -7,7 +7,12 @@
             'c-details--far': distance > 16
         }"
     >
-        <p v-if="seating === 'SELECT_SEATING'" class="c-seating">{{ seating }}</p>
+        <p
+            v-if="seating === 'SELECT_SEATING'"
+            class="c-seating"
+        >
+            {{ seating }}
+        </p>
         <p class="c-distance">{{ distance }} mi</p>
         <p class="c-name">{{ name }}</p>
     </div>
@@ -15,7 +20,7 @@
 
 <script>
 export default {
-    name: 'Details',
+    name: "Details",
     props: {
         distance: {
             type: Number,
@@ -28,14 +33,15 @@ export default {
         },
 
         seating: {
-            type: String
+            type: String,
+            default: ""
         }
     }
 };
 </script>
 
 <style lang="less" scoped>
-@import (reference) '~@/assets/style/variables/global';
+@import (reference) "~@/assets/style/variables/global";
 
 .c-details {
     position: absolute;
@@ -73,7 +79,7 @@ export default {
 
 .c-distance {
     font-weight: 400;
-    font-feature-settings: 'tnum';
+    font-feature-settings: "tnum";
     font-size: 36px;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
     margin-bottom: (@base-unit * 2);

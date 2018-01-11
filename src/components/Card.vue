@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import Map from '@/components/Map';
-import Details from '@/components/Details';
+import Map from "@/components/Map";
+import Details from "@/components/Details";
 
 export default {
-    name: 'Card',
+    name: "Card",
 
     components: {
         Map,
@@ -53,5 +53,3 @@ export default {
     overflow: hidden;
 }
 </style>
-
-
