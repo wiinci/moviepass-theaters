@@ -74,7 +74,7 @@ export default {
 .c-mapContainer,
 .c-map {
     min-width: 27vw;
-    height: 41vw;
+    height: 40vw;
     overflow: hidden;
 }
 </style>
