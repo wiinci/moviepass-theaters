@@ -1,11 +1,14 @@
 <template>
     <div>
         <router-link
-            :to="{ path: '/about'}"
+            :to="{ path: '/about' }"
             exact
         >
             About
         </router-link>
+        <MapFilter
+            v-bind="{zip, updateZip}"
+        />
         <Cards
             v-if="theaters.length"
             :theaters="theaters"
@@ -18,17 +21,19 @@
 <script>
 import axios from "axios";
 import Cards from "@/components/Cards";
+import MapFilter from "@/components/MapFilter";
 
 export default {
     name: "Home",
 
     components: {
-        Cards
+        Cards,
+        MapFilter
     },
 
     data() {
         return {
-            zip: null,
+            zip: 0,
             lat: null,
             lon: null,
             theaters: [],
@@ -50,11 +55,11 @@ export default {
                     }
                 })
                 .then(response => {
-                    this.zip = response.data.address.postcode;
+                    this.zip = +response.data.address.postcode;
                     console.log(response.data.address.postcode);
                 })
                 .catch(err => {
-                    this.zip = null;
+                    this.zip = 0;
                     console.error(err);
                 });
         },
@@ -102,9 +107,14 @@ export default {
         geoError(error) {
             this.lat = null;
             this.lon = null;
-            this.zip = null;
+            this.zip = 0;
 
             console.error(error);
+        },
+
+        updateZip(zip) {
+            this.zip = +zip;
+            console.log(+zip);
         }
     }
 };
