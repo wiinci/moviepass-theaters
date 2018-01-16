@@ -12,7 +12,7 @@ module.exports = {
     },
     extends: ["airbnb-base", "plugin:vue/recommended"],
     // required to lint *.vue files
-    plugins: ["vue"],
+    plugins: ["vue", "html"],
     // check if imports actually resolve
     settings: {
         "import/resolver": {
@@ -76,6 +76,13 @@ module.exports = {
                     max: 1,
                     allowFirstLine: false
                 }
+            }
+        ],
+        "vue/html-closing-bracket-newline": [
+            "error",
+            {
+                singleline: "never",
+                multiline: "always"
             }
         ]
     }
