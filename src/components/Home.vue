@@ -1,25 +1,25 @@
 <template>
-    <div>
-        <router-link
-            :to="{ path: '/about' }"
-            exact
-        >
-            About
-        </router-link>
+    <article>
+        <nav>
+            <router-link
+                :to="{ path: '/about' }"
+                exact
+            >
+                About
+            </router-link>
+        </nav>
         <MapFilter
             v-bind="{zip, updateZip}"
         />
         <Cards
-            v-if="theaters.length"
             :theaters="theaters"
             :zip="zip"
         />
-        <p v-else>Loading …</p>
-    </div>
+    </article>
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import Cards from "@/components/Cards";
 import MapFilter from "@/components/MapFilter";
 
@@ -33,7 +33,7 @@ export default {
 
     data() {
         return {
-            zip: 0,
+            zip: null,
             lat: null,
             lon: null,
             theaters: [],
@@ -41,42 +41,42 @@ export default {
         };
     },
 
-    watch: {
-        lat() {
-            // Lookup zip code using OpenStreetMap’s Nominatim service
-            const url = "https://nominatim.openstreetmap.org/reverse";
-            axios
-                .get(url, {
-                    params: {
-                        format: "json",
-                        addressdetails: 1,
-                        lat: this.lat,
-                        lon: this.lon
-                    }
-                })
-                .then(response => {
-                    this.zip = +response.data.address.postcode;
-                    console.log(response.data.address.postcode);
-                })
-                .catch(err => {
-                    this.zip = 0;
-                    console.error(err);
-                });
-        },
+    // watch: {
+    //     lat() {
+    //         // Lookup zip code using OpenStreetMap’s Nominatim service
+    //         const url = "https://nominatim.openstreetmap.org/reverse";
+    //         axios
+    //             .get(url, {
+    //                 params: {
+    //                     format: "json",
+    //                     addressdetails: 1,
+    //                     lat: this.lat,
+    //                     lon: this.lon
+    //                 }
+    //             })
+    //             .then(response => {
+    //                 this.zip = +response.data.address.postcode;
+    //                 console.log(response.data.address.postcode);
+    //             })
+    //             .catch(err => {
+    //                 this.zip = 0;
+    //                 console.error(err);
+    //             });
+    //     },
 
-        zip() {
-            // Get nearby MoviePass theaters using the API
-            const url = `/theaters/zip/${this.zip}`;
-            axios
-                .get(url)
-                .then(response => {
-                    this.theaters = response.data.theaters;
-                })
-                .catch(err => {
-                    console.error(err);
-                });
-        }
-    },
+    //     zip() {
+    //         // Get nearby MoviePass theaters using the API
+    //         const url = `/theaters/zip/${this.zip}`;
+    //         axios
+    //             .get(url)
+    //             .then(response => {
+    //                 this.theaters = response.data.theaters;
+    //             })
+    //             .catch(err => {
+    //                 console.error(err);
+    //             });
+    //     }
+    // },
 
     created() {
         if (!navigator.geolocation) {

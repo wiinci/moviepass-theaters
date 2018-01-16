@@ -1,12 +1,18 @@
 <template>
-    <ul class="c-cards">
-        <Card
-            v-for="(theater, index) in theaters"
-            :theater="theater"
-            :index="index"
-            :key="theater.id"
-        />
-    </ul>
+    <section>
+        <ul
+            v-if="theaters.length"
+            class="c-cards"
+        >
+            <Card
+                v-for="(theater, index) in theaters"
+                :theater="theater"
+                :index="index"
+                :key="theater.id"
+            />
+        </ul>
+        <p v-else>Loading …</p>
+    </section>
 </template>
 
 <script>
