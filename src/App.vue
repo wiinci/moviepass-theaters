@@ -28,5 +28,11 @@ body {
     margin: 0;
     min-height: 100vh;
     color: @black;
+    background: lighten(#e5ecfb, 3%);
+}
+
+main,
+article {
+    min-height: inherit;
 }
 </style>
