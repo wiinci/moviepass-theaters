@@ -11,7 +11,13 @@
                 :key="theater.id"
             />
         </ul>
-        <p v-else>Loading …</p>
+        <div
+            v-else
+            class="c-loading"
+        >
+            <h1>🗺 Loading …</h1>
+        </div>
+
     </section>
 </template>
 
@@ -45,5 +51,12 @@ export default {
     padding: (@base-unit * 6vmin);
     list-style-type: none;
     list-style: none outside;
+}
+
+.c-loading {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
