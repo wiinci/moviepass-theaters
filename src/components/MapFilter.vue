@@ -2,8 +2,15 @@
     <section class="c-searchContainer">
         <label
             for="zip"
-            class="v-visuallyHidden"
-        >Enter zip code
+            class="c-inputLabel"
+        >
+            <span class="v-visuallyHidden">
+                Find
+            </span>
+            MoviePass theaters near
+            <span class="v-visuallyHidden">
+                zip code. Type and press Enter to search.
+            </span>
         </label>
         <input
             type="search"
@@ -11,6 +18,7 @@
             class="c-inputField c-zipSearch"
             id="zip"
             autocomplete="off"
+            placeholder="Zip code"
             :value="zip"
             @keyup.enter="updateZip($event.target.value)"
         >
@@ -40,6 +48,7 @@ export default {
 
 .c-searchContainer {
     display: flex;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
     position: sticky;
@@ -68,16 +77,27 @@ export default {
     border: 0;
     outline: 0;
     -webkit-appearance: none;
+
+    &::-webkit-search-cancel-button {
+        display: none;
+    }
+}
+
+.c-inputLabel {
+    padding: 0 0 @base-unit 0;
+    font-size: @small-text;
+    font-weight: 500;
 }
 
 .c-zipSearch {
     font-size: @h4;
     font-weight: 400;
     padding: @base-unit;
+    overflow: hidden;
+    letter-spacing: 1px;
     border-radius: (@base-unit * 100);
     border: 3px solid #17181a;
     text-align: center;
-    background: #f7f7f7;
     transition: border-color ease-in-out 0.2s;
 }
 
