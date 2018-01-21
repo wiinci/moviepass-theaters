@@ -115,6 +115,6 @@ export default {
 <style lang="less" scoped>
 article {
     display: grid;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 100px 1fr;
 }
 </style>
