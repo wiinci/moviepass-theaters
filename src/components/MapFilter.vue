@@ -45,6 +45,8 @@ export default {
     position: sticky;
     top: 0;
     z-index: 2000;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 
     &::before {
         content: "";
@@ -65,6 +67,7 @@ export default {
     font-family: inherit;
     border: 0;
     outline: 0;
+    -webkit-appearance: none;
 }
 
 .c-zipSearch {
