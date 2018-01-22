@@ -4,13 +4,11 @@
             for="zip"
             class="c-inputLabel"
         >
-            <span class="v-visuallyHidden">
-                Find
-            </span>
-            MoviePass theaters near
-            <span class="v-visuallyHidden">
-                zip code. Type and press Enter to search.
-            </span>
+            <span class="v-visuallyHidden">Type and press Enter to find</span>
+            MoviePass theaters
+            <span class="v-visuallyHidden">by zip code</span>
+            near
+            <span class="v-visuallyHidden">you.</span>
         </label>
         <input
             type="search"
@@ -19,9 +17,18 @@
             id="zip"
             autocomplete="off"
             placeholder="Zip code"
+            aria-describedby="theatersFound"
+            autofocus
             :value="zip"
             @keyup.enter="updateZip($event.target.value)"
         >
+        <p
+            v-show="theaters.length"
+            class="c-foundMsg"
+            id="theatersFound"
+        >
+            {{ theaters.length }} theaters found
+        </p>
     </section>
 </template>
 
@@ -33,6 +40,10 @@ export default {
         zip: {
             type: Number,
             default: 0
+        },
+        theaters: {
+            type: Array,
+            required: true
         },
         updateZip: {
             type: Function,
@@ -87,6 +98,12 @@ export default {
     padding: 0 0 @base-unit 0;
     font-size: @small-text;
     font-weight: 500;
+}
+
+.c-foundMsg {
+    font-size: @small-text;
+    font-weight: 500;
+    margin: @base-unit 0 0 0;
 }
 
 .c-zipSearch {
