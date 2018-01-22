@@ -51,8 +51,10 @@ export default {
             zoom: 14,
             options: {
                 zoomControl: false,
+                attributionControl: false,
                 scrollWheelZoom: false,
-                dragging: false
+                dragging: false,
+                keyboard: false
             },
             url: "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png",
             labelUrl: "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png",
@@ -78,4 +80,3 @@ export default {
     overflow: hidden;
 }
 </style>
-
