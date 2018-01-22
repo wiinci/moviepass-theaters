@@ -1,7 +1,7 @@
 <template>
     <article>
         <MapFilter
-            v-bind="{zip, updateZip}"
+            v-bind="{zip, theaters, updateZip}"
         />
         <Cards
             :theaters="theaters"
