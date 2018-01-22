@@ -2,7 +2,6 @@
     <li class="c-card">
         <a
             href="#0"
-            aria-describedby="name distance"
             class="c-card_link"
             :ref="'card' + index"
         >
