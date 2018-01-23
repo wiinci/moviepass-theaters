@@ -13,3 +13,7 @@ certs/
 *.njsproj
 *.sln
 learn*.md
+TheaterList.vue
+TheaterMap.vue
+MainNav.vue
+404.vue
