@@ -50,13 +50,13 @@ export default {
     },
 
     mounted() {
-        const oberverOptions = {
+        const observerOptions = {
             root: null,
             rootMargin: "0px",
             threshold: 0.2
         };
 
-        this.observer = new IntersectionObserver(this.loadMap, oberverOptions);
+        this.observer = new IntersectionObserver(this.loadMap, observerOptions);
 
         this.observer.observe(this.$refs["card" + this.index]);
     },
