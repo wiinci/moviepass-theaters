@@ -6,8 +6,8 @@
             :ref="'card' + index"
         >
             <Map
-                :lon="theater.lon"
-                :lat="theater.lat"
+                :lon="lon"
+                :lat="lat"
             />
             <Details
                 :distance="theater.distance"
@@ -30,6 +30,13 @@ export default {
         Details
     },
 
+    data() {
+        return {
+            lat: null,
+            lon: null
+        };
+    },
+
     props: {
         theater: {
             type: Object,
@@ -39,6 +46,30 @@ export default {
         index: {
             type: Number,
             required: true
+        }
+    },
+
+    mounted() {
+        const oberverOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.2
+        };
+
+        this.observer = new IntersectionObserver(this.loadMap, oberverOptions);
+
+        this.observer.observe(this.$refs["card" + this.index]);
+    },
+
+    methods: {
+        loadMap(changes, observer) {
+            changes.forEach((change) => {
+                if (change.intersectionRatio > 0) {
+                    this.lon = this.theater.lon;
+                    this.lat = this.theater.lat;
+                    this.observer.unobserve(this.$refs["card" + this.index]);
+                }
+            });
         }
     }
 };
