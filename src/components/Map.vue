@@ -1,6 +1,9 @@
 <template>
     <div class="c-mapContainer">
-        <div class="c-map">
+        <div
+            v-if="lat"
+            class="c-map"
+        >
             <v-map
                 :zoom="zoom"
                 :center="[lat, lon]"
@@ -34,17 +37,7 @@ export default {
         "v-marker": Vue2Leaflet.Marker
     },
 
-    props: {
-        lat: {
-            type: Number,
-            required: true
-        },
-
-        lon: {
-            type: Number,
-            required: true
-        }
-    },
+    props: ["lat", "lon"],
 
     data() {
         return {
