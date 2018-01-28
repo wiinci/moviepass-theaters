@@ -28,7 +28,7 @@ body {
     margin: 0;
     min-height: 100vh;
     color: @black;
-    background: lighten(#e5ecfb, 3%);
+    background: linear-gradient(to bottom, rgba(127, 219, 255, 0.1), rgba(82, 140, 163, 0.3));
 }
 
 main,

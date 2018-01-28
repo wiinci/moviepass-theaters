@@ -1,12 +1,5 @@
 <template>
-    <div
-        class="c-details"
-        :class="{
-            'c-details--here': distance <= 6,
-            'c-details--near': distance > 6 && distance <= 16,
-            'c-details--far': distance > 16
-        }"
-    >
+    <div class="c-details">
         <p
             v-if="seating === 'SELECT_SEATING'"
             class="c-seating"
@@ -56,37 +49,26 @@ export default {
     justify-content: flex-end;
 }
 
-// .c-details--here {
-//     background: rgba(151, 81, 221, 0.15);
-// }
-
-// .c-details--near {
-//     background: rgba(209, 179, 237, 0.15);
-// }
-
-// .c-details--far {
-//     background: rgba(39, 51, 77, 0.15);
-// }
-
 .c-name,
 .c-distance {
     margin: 0;
     color: #2e3233;
     display: inline-table;
     background-color: #fbfbfb;
-    padding: 0 @base-unit;
+    padding: @base-unit (@base-unit * 2);
+    box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.25);
 }
 
 .c-distance {
     font-weight: 400;
     font-feature-settings: "tnum";
     font-size: 36px;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.25);
     margin-bottom: (@base-unit * 2);
 }
 
 .c-name {
     font-weight: 500;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.25);
 }
 </style>
