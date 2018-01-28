@@ -50,19 +50,23 @@ export default {
     },
 
     mounted() {
-        const observerOptions = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.2
-        };
+        if ("IntersectionObserver" in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.2
+            };
 
-        this.observer = new IntersectionObserver(this.loadMap, observerOptions);
+            this.observer = new IntersectionObserver(this.onIntersection, observerOptions);
 
-        this.observer.observe(this.$refs["card" + this.index]);
+            this.observer.observe(this.$refs["card" + this.index]);
+        } else {
+            this.loadMap;
+        }
     },
 
     methods: {
-        loadMap(changes, observer) {
+        onIntersection(changes, observer) {
             changes.forEach((change) => {
                 if (change.intersectionRatio > 0) {
                     this.lon = this.theater.lon;
@@ -70,6 +74,11 @@ export default {
                     this.observer.unobserve(this.$refs["card" + this.index]);
                 }
             });
+        },
+
+        loadMap() {
+            this.lon = this.theater.lon;
+            this.lat = this.theater.lat;
         }
     }
 };
