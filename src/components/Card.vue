@@ -66,9 +66,9 @@ export default {
     },
 
     methods: {
-        onIntersection(changes, observer) {
-            changes.forEach((change) => {
-                if (change.intersectionRatio > 0) {
+        onIntersection(entries, observer) {
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio > 0) {
                     this.lon = this.theater.lon;
                     this.lat = this.theater.lat;
                     this.observer.unobserve(this.$refs["card" + this.index]);
