@@ -8,8 +8,10 @@
         }"
     >
         <a
-            href="#0"
+            target="_blank"
+            rel="noreferrer noopener"
             class="c-card_link"
+            :href="'https://www.google.com/maps/search/?api=1&query=' + theater.name"
             :ref="'card' + index"
         >
             <Map

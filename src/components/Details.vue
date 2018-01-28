@@ -65,6 +65,14 @@ export default {
     box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.2);
 }
 
+.c-seating {
+    display: flex;
+    width: (@base-unit * 11);
+    height: (@base-unit * 11);
+    justify-content: center;
+    align-items: center;
+}
+
 .c-distance {
     font-weight: 400;
     font-feature-settings: "tnum";
