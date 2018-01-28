@@ -9,17 +9,8 @@
                 :center="[lat, lon]"
                 :options="options"
             >
-                <!-- Toner labels overlay -->
-                <v-tilelayer
-                    :url="labelUrl"
-                    :opacity=".6"
-                    :z-index="13"
-                />
-                <!-- Watercolor base map -->
-                <v-tilelayer
-                    :url="url"
-                    :z-index="12"
-                />
+                <!-- Stamen terrain base map -->
+                <v-tilelayer :url="url" />
             </v-map>
         </div>
     </div>
@@ -49,8 +40,7 @@ export default {
                 dragging: false,
                 keyboard: false
             },
-            url: "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png",
-            labelUrl: "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png",
+            url: "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png",
             attribution:
                 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         };

@@ -62,7 +62,7 @@ export default {
     display: inline-table;
     background-color: #fbfbfb;
     padding: @base-unit (@base-unit * 2);
-    box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.35);
 }
 
 .c-seating {
@@ -71,6 +71,10 @@ export default {
     height: (@base-unit * 11);
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: (@base-unit * 2);
+    right: (@base-unit * 2);
+    border-radius: 100px;
 }
 
 .c-distance {
