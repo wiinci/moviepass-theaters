@@ -4,7 +4,12 @@
             v-if="seating === 'SELECT_SEATING'"
             class="c-seating"
         >
-            {{ seating }}
+            <img
+                src="/static/img/app/select-seating.svg"
+                width="24"
+                :alt="'Select seating available at this theater: ' + name"
+                title="Select seating available at this theater"
+            >
         </p>
         <p class="c-distance">{{ distance }} mi</p>
         <p class="c-name">{{ name }}</p>
@@ -50,25 +55,26 @@ export default {
 }
 
 .c-name,
-.c-distance {
+.c-distance,
+.c-seating {
     margin: 0;
     color: #2e3233;
     display: inline-table;
     background-color: #fbfbfb;
     padding: @base-unit (@base-unit * 2);
-    box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 (@base-unit * 4) 0 rgba(0, 0, 0, 0.2);
 }
 
 .c-distance {
     font-weight: 400;
     font-feature-settings: "tnum";
     font-size: 36px;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.25);
-    margin-bottom: (@base-unit * 2);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
+    margin: (@base-unit * 2) 0;
 }
 
 .c-name {
     font-weight: 500;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
 }
 </style>

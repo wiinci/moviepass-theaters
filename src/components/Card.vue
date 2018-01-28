@@ -1,11 +1,11 @@
 <template>
     <li
         class="c-card"
-:class="{
-    'c-card--here': theater.distance <= 6,
-    'c-card--near': theater.distance > 6 && theater.distance <= 16,
-    'c-card--far': theater.distance > 16
-}"
+        :class="{
+            'c-card--here': theater.distance <= 6,
+            'c-card--near': theater.distance > 6 && theater.distance <= 16,
+            'c-card--far': theater.distance > 16
+        }"
     >
         <a
             href="#0"
