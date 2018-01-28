@@ -1,11 +1,11 @@
 <template>
     <li
         class="c-card"
-        :class="{
-            'c-card--here': theater.distance <= 6,
-            'c-card--near': theater.distance > 6 && theater.distance <= 16,
-            'c-card--far': theater.distance > 16
-        }"
+:class="{
+    'c-card--here': theater.distance <= 6,
+    'c-card--near': theater.distance > 6 && theater.distance <= 16,
+    'c-card--far': theater.distance > 16
+}"
     >
         <a
             href="#0"
@@ -99,15 +99,36 @@ export default {
 }
 
 .c-card--here {
-    background: linear-gradient(15deg, rgba(29, 151, 108, 0.9), rgba(147, 249, 185, 0.9));
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2) 0.1%,
+            transparent 0.1%,
+            transparent 1%
+        ),
+        linear-gradient(15deg, rgba(29, 151, 108, 0.9), rgba(147, 249, 185, 0.9));
 }
 
 .c-card--near {
-    background: linear-gradient(15deg, rgba(247, 151, 30, 0.9), rgba(255, 210, 0, 0.9));
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2) 0.1%,
+            transparent 0.1%,
+            transparent 1%
+        ),
+        linear-gradient(15deg, rgba(255, 128, 8, 0.9), rgba(216, 180, 89, 0.9));
 }
 
 .c-card--far {
-    background: linear-gradient(-15deg, rgba(238, 9, 121, 0.9), rgba(255, 106, 0, 0.9));
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2) 0.1%,
+            transparent 0.1%,
+            transparent 1%
+        ),
+        linear-gradient(-15deg, rgba(238, 9, 121, 0.9), rgba(255, 106, 0, 0.9));
 }
 
 .c-card_link {
