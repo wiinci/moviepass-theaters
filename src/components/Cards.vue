@@ -46,9 +46,9 @@ export default {
 .c-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(@base-unit * 65, 1fr));
-    grid-gap: (@base-unit * 6vmin);
+    grid-gap: (@base-unit * 5vmin);
     margin: 0;
-    padding: (@base-unit * 6vmin);
+    padding: (@base-unit * 5vmin);
     list-style-type: none;
     list-style: none outside;
 }

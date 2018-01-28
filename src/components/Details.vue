@@ -67,14 +67,16 @@ export default {
 
 .c-seating {
     display: flex;
-    width: (@base-unit * 11);
-    height: (@base-unit * 11);
+    width: (@base-unit * 12);
+    height: (@base-unit * 12);
     justify-content: center;
     align-items: center;
     position: absolute;
     top: (@base-unit * 2);
     right: (@base-unit * 2);
     border-radius: 100px;
+    border: 2px solid rgba(97, 43, 165, 0.5);
+    padding: (@base-unit * 3);
 }
 
 .c-distance {
