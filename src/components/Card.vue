@@ -76,7 +76,7 @@ export default {
 
     methods: {
         onIntersection(entries, observer) {
-            entries.forEach((entry) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting || entry.intersectionRatio > 0) {
                     this.lon = this.theater.lon;
                     this.lat = this.theater.lat;
