@@ -70,7 +70,7 @@ export default {
 
             this.observer.observe(this.$refs["card" + this.index]);
         } else {
-            this.loadMap;
+            this.loadMap();
         }
     },
 
@@ -78,8 +78,7 @@ export default {
         onIntersection(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting || entry.intersectionRatio > 0) {
-                    this.lon = this.theater.lon;
-                    this.lat = this.theater.lat;
+                    this.loadMap();
                     this.observer.unobserve(this.$refs["card" + this.index]);
                 }
             });

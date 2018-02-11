@@ -14,7 +14,8 @@
     },
     "dependencies": {
         "vue": "^2.5.13",
-        "vue-router": "^3.0.1"
+        "vue-router": "^3.0.1",
+        "vue2-leaflet": "0.0.57"
     },
     "devDependencies": {
         "autoprefixer": "^7.2.5",
@@ -63,7 +64,6 @@
         "vue-loader": "^13.7.0",
         "vue-style-loader": "^3.0.3",
         "vue-template-compiler": "^2.5.13",
-        "vue2-leaflet": "0.0.57",
         "webpack": "^3.7.1",
         "webpack-bundle-analyzer": "^2.9.2",
         "webpack-dev-middleware": "^1.12.0",
