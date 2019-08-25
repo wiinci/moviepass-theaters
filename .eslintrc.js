@@ -27,12 +27,12 @@ module.exports = {
         "no-undef": ["warn"],
         // max-len
         "max-len": "off",
-        // 4-space indentation
-        indent: ["warn", 4],
-        // Double quotes
-        quotes: ["warn", "double", { avoidEscape: true }],
+        // 2-space indentation
+        indent: ["warn", 2],
+        // Single quotes
+        quotes: ["warn", "single", { avoidEscape: true }],
         // Arrow parens
-        "arrow-parens": ["warn", "as-needed"],
+        "arrow-parens": ["warn", "always"],
         // Multi-line comma dangle
         "comma-dangle": ["error", "only-multiline"],
         // Turn off no-underscore-dangle
@@ -55,6 +55,8 @@ module.exports = {
                 optionalDependencies: ["test/unit/index.js"]
             }
         ],
+        // allow console during development
+        "no-console": process.env.NODE_ENV === "production" ? 2 : 0,
         // allow debugger during development
         "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
         // Vue settings
