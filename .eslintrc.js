@@ -26,13 +26,7 @@ module.exports = {
     // no-undef
     'no-undef': ['warn'],
     // max-len
-    'max-len': 80,
-    // 2-space indentation
-    indent: ['warn', 2],
-    // Single quotes
-    quotes: ['warn', 'single', { avoidEscape: true }],
-    // Arrow parens
-    'arrow-parens': ['warn', 'always'],
+    'max-len': ['warn', { ignoreUrls: true }],
     // Multi-line comma dangle
     'comma-dangle': ['error', 'only-multiline'],
     // Turn off no-underscore-dangle
