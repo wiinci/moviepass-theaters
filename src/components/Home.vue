@@ -58,13 +58,7 @@ export default {
       axios
         .get(url, {
           async: true,
-          corssDomain: true,
-          headers: {
-            Accept: '*/*',
-            'Access-Control-Allow-Origin': '*',
-            'Cache-Control': 'no-cache',
-            'cache-control': 'no-cache',
-          },
+          crossDomain: true,
         })
         .then((response) => {
           this.theaters = response.data.theaters;
