@@ -53,9 +53,19 @@ export default {
 
     zip(newValue) {
       // Get nearby MoviePass theaters using the API
-      const url = `/theaters/zip/${newValue}`;
+      const url = `https://api.moviepass.com/theaters/zip/${newValue}`;
+      // const url = `/theaters/zip/${newValue}`;
       axios
-        .get(url)
+        .get(url, {
+          async: true,
+          corssDomain: true,
+          headers: {
+            Accept: '*/*',
+            'Access-Control-Allow-Origin': '*',
+            'Cache-Control': 'no-cache',
+            'cache-control': 'no-cache',
+          },
+        })
         .then((response) => {
           this.theaters = response.data.theaters;
         })
