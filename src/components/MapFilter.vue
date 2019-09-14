@@ -20,7 +20,7 @@
       @keyup.enter="updateZip($event.target.value)"
     />
     <p v-show="theaters.length" class="c-foundMsg" id="theatersFound">
-      {{ theaters.length }} theaters found
+      {{ theaters.length }} results
     </p>
   </section>
 </template>
