@@ -1,6 +1,10 @@
+🚨 Archived
+
+---
+
 # moviepass-locations
 
-> Find nearest MoviePass theater
+> Find the nearest MoviePass theater
 
 ## Build Setup
 
